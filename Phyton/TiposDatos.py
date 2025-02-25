@@ -10,3 +10,5 @@ print("Entero = ", entero)
 print("Cadena = ", cadena)
 print("flotante =", flotante)
 print("Booleano =", booleano)
+
+#los codigos estan declarando diferentes funciones, por ejemplo en el c tiene una llamada doble y al igual para declarar la funcion print el que esta en c tiene un f de mas.
