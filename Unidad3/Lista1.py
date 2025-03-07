@@ -2,18 +2,32 @@
 numeros = [1, 2, 3, 4, 5]
 
 # Lista de cadenas
+
 nombres = ["Ana", "Luis", "Pedro"]
+
 
 # Lista con diferentes tipos de datos
 mixta = [10, "Python", True, 3.14]
 
 # Lista vacía
 vacia = []
-#vacia[0] = "jose"
 
-print(numeros[0])
-print(nombres[1])
-print(mixta[3])
+#Agregar elementos a listas
+vacia.append("jose")
+nombres.append("Juan")
+numeros.append(69)
+mixta.append("ruben")
+
+#Eliminar elementos de listas
+nombres.remove("Ana")
+
+#Recorrer una lista en bucle
+for nombre in nombres:
+    print(nombre)
+
+print(numeros)
+print(nombres)
+print(mixta)
 print(vacia)
 
 
