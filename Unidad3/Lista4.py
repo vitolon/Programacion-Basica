@@ -2,11 +2,11 @@ Nombres = ["lupita", "Sabayd", "Alexa", "Aaron", "Manuel", "Victor", "Cristian",
 
 Edades = [18, 20, 19, 18, 18, 19, 19, 19, 18 ]
 
-Videojuegos =  ["Doom", "Minecraft", "Halo", "DMC", "Hollow knigth", "fifa", "Fornite", "Roblox", "Assasins Creed", "The witcher"]
+Videojuegos =  ["Doom", "Minecraft", "Halo", "DMC", "Hollow knigth", "fifa", "Fornite", "Roblox", "Assasins Creed", "The witcher","DEad space", "Red dead redemption", "Cod",]
 
 Materias = ["Calculo", "Algebra", "Contabilidad", "Estadistica", "Programacion", "Materiales", "Ingles"]
 
-Profesores = ["Adilene", "Guillermo", "Laura", "Eduardo", "Enrique"]
+Profesores = ["Adilene", "Guillermo", "Laura", "Eduardo", "Enrique", "Marlen"]
 #Imprimir las listas
 print(Nombres)
 print(Edades)
@@ -26,7 +26,13 @@ print(min(Edades))
 Materias.remove("Programacion")
 print(Materias)
 #Agregar un elemento a una lista
-Materias.append("Programacion avanzada")
+Materias.append("Programacion xd")
 print(Materias)
-Materias.append[1, "Programacion avanzada"]
+Materias.insert (1, "Programacion avanzada")
 print(Materias)
+#For
+for Materia in Materias: 
+    print(Materia)
+
+
+
