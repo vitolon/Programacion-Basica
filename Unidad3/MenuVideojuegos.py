@@ -27,7 +27,7 @@ def Agregar_juego():
     nombre = input("Ingresa el nombre del juego: ")
     genero = input("Ingresa el género del juego (Accion, Aventura, Terror, Arcade, Deportes, Estrategia, Simulacion, Shooters): ").lower() #se utiliza lower para cambiar todo lo escrito a minusculas sin importar si se escribio con uso de mayuculas y minusculas
 
-    if genero == "accion":
+    if genero == "accion":#Cuando el morro que le mueve ingresa el nombre y el género de un juego, el código verifica gracias al 'if' si el género es "accion". Si es así, agrega el juego al diccionario de Accion y luego imrpimea un mensaje confirmando que el juego se ah agregado a ese diccionario.
         Accion[nombre] = genero
         print(f"'{nombre}' ha sido agregado a la categoría 'Accion'.")
     elif genero == "aventura":
@@ -62,8 +62,8 @@ def Eliminar_juego():
     nombre = input("Ingresa el nombre del juego que quieres Eliminar ")
 
     if nombre in Accion :
-        del Accion[nombre] 
-        print(f"'{nombre}' ha sido eliminado de la categoría 'Accion'.")
+        del Accion[nombre]
+        print(f"'{nombre}' ha sido eliminado de la categoría 'Accion'.")# si el nombre esta en el diccionario pasa a eliminarlo del diccionario y despues imprime que se ah elimiado.
     elif nombre in Aventura:
         del Aventura[nombre] 
         print(f"'{nombre}' ha sido eliminado de la categoría 'Aventura'.")
@@ -97,7 +97,7 @@ def Mostrar_juegos():
     print("\n juegos en Accion")
     if Accion:
         for nombre in Accion:
-            print(f"-{nombre}")
+            print(f"-{nombre}")#lo que hace es checar si el diccionario tiene valores, si es haci, se interpreta la siguiente linea que es el for y lo qe hace basicamenrte es imprimier todos los nombes que estasn en el diccionario.
     else:
         print("No hay juegos en este genero")
 #se checan los juegos que hay en Aventura 
