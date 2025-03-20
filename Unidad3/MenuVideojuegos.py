@@ -6,7 +6,11 @@ import time #Se importa esta libreria para poder hacer pausas mientras se esta e
 Accion = {}
 Aventura = {}
 Terror = {}
-
+Arcade ={}
+Deportes = {}
+Estrategia = {}
+Simulacion = {}
+Shooters = {}
 #  se verifica el sistema operativo y se limpia la pantalla
 def Limpiar_el_Cochinero():
     os.system('cls' if os.name == 'nt' else 'clear') 
@@ -17,10 +21,11 @@ def Mostrar_menu():
     print("3. Ver lista de juegos")
     print("4. Salir")
 #se agregan juegos a los diccionarios
+
 def Agregar_juego():
-    print("\n--- Agregar un juego ---")
+    print("\n Agregar un juego")
     nombre = input("Ingresa el nombre del juego: ")
-    genero = input("Ingresa el género del juego (Accion/Aventura/Terror): ").lower()#se utiliza lower para cambiar todo lo escrito a minusculas sin importar si se escribio con uso de mayuculas y minusculas
+    genero = input("Ingresa el género del juego (Accion, Aventura, Terror, Arcade, Deportes, Estrategia, Simulacion, Shooters): ").lower() #se utiliza lower para cambiar todo lo escrito a minusculas sin importar si se escribio con uso de mayuculas y minusculas
 
     if genero == "accion":
         Accion[nombre] = genero
@@ -31,14 +36,29 @@ def Agregar_juego():
     elif genero == "terror":
         Terror[nombre] = genero
         print(f"'{nombre}' ha sido agregado a la categoría 'Terror'.")
+    elif genero == "arcade":
+        Arcade[nombre] = genero
+        print(f"'{nombre}' ha sido agregado a la categoria 'Arcade'.")
+    elif genero == "deportes":
+        Deportes[nombre] = genero
+        print(f"'{nombre}' ha sido agregado a la categoria 'Deportes'.")
+    elif genero == "estrategia":
+        Estrategia[nombre] = genero
+        print(f"'{nombre}' ha sido agregado a la categoria 'Estrategia'.")
+    elif genero == "simulacion":
+        Simulacion[nombre] = genero
+        print(f"'{nombre}' ha sido agregado a la categoria 'Simulacion'.")
+    elif genero == "shooters":
+        Shooters[nombre] = genero
+        print(f"'{nombre}' ha sido agregado a la categoria 'Shooters'.")    
     else:
-        print("Género no disponible. Usa 'Accion', 'Aventura' o 'Terror'.")
+        print("Género no disponible, prueba con: 'Accion', 'Aventura', 'Terror', 'Arcade', 'Deportes', 'Estrategia', 'Simulacion', 'Shooters'.")
         
     time.sleep(2)# Se da una espera de 2 segundos para continuar con la siguiente accion
 
 #se eliminan juegos de los generos
 def Eliminar_juego():
-    print("\n--- Eliminar un juego ---")
+    print("\n Eliminar un juego")
     nombre = input("Ingresa el nombre del juego que quieres Eliminar ")
 
     if nombre in Accion :
@@ -50,6 +70,21 @@ def Eliminar_juego():
     elif nombre in Terror:
         del Terror[nombre] 
         print(f"'{nombre}' ha sido eliminado de la categoría 'Terror'.")
+    elif nombre in Arcade:
+        del Arcade[nombre] 
+        print(f"'{nombre}' ha sido eliminado de la categoría 'Arcade'.")
+    elif nombre in Deportes:
+        del Deportes[nombre] 
+        print(f"'{nombre}' ha sido eliminado de la categoría 'Deportes'.")
+    elif nombre in Estrategia:
+        del Estrategia[nombre] 
+        print(f"'{nombre}' ha sido eliminado de la categoría 'Estrategia'.")
+    elif nombre in Simulacion:
+        del Simulacion[nombre] 
+        print(f"'{nombre}' ha sido eliminado de la categoría 'Simulacion'.")
+    elif nombre in Shooters:
+        del Shooters[nombre] 
+        print(f"'{nombre}' ha sido eliminado de la categoría 'Shooters'.")
     else:
         print("No a sido encontrado en ninguna categoria")
     time.sleep(2)# Se da una espera de 2 segundos para continuar con la siguiente accion
@@ -57,30 +92,65 @@ def Eliminar_juego():
 #Se ven los juegos agregados en cada lista
 def Mostrar_juegos():
 #se visualizan los juegos ordenados en cada genero    
-    print("\n---ver lista de juegos---")
+    print("\n ver lista de juegos")
 #se checan los juegos que hay en Accion  
-    print("\n---ver juegos en Accion---")
+    print("\n juegos en Accion")
     if Accion:
         for nombre in Accion:
             print(f"-{nombre}")
     else:
         print("No hay juegos en este genero")
 #se checan los juegos que hay en Aventura 
-    print("\n---ver juegos en Aventuras---")
+    print("\n juegos en Aventuras")
     if Aventura:
         for nombre in Aventura:
             print(f"-{nombre}")
     else:
         print("No hay juegos en este genero")
 #se checan los juegos que hay en Terror        
-    print("\n---ver juegos en Terror---")
+    print("\n juegos en Terror ")
     if Terror:
         for nombre in Terror:
             print(f"-{nombre}")
     else:
         print("No hay juegos en este genero")
+#se checan los juegos que hay en Arcade
+    print("\n juegos en Arcade")
+    if Arcade:
+        for nombre in Arcade:
+            print(f"-{nombre}")
+    else:
+        print("No hay juegos en este genero")
+#se checan los juegos que hay en Deportes
+    print("\n juegos en Deportes")
+    if Deportes:
+        for nombre in Deportes:
+            print(f"-{nombre}")
+    else:
+        print("No hay juegos en este genero")
+#se checan los juegos que hay en Estrategia
+    print("\n juegos en Estrategia")
+    if Estrategia:
+        for nombre in Estrategia:
+            print(f"-{nombre}")
+    else:
+        print("No hay juegos en este genero")
+#se checan los juegos que hay en Simulacion
+    print("\n juegos en Simulacion")
+    if Simulacion:
+        for nombre in Simulacion:
+            print(f"-{nombre}")
+    else:
+        print("No hay juegos en este genero")
+#se checan los juegos que hay en Shooters
+    print("\n juegos en Shooters")
+    if Shooters:
+        for nombre in Shooters:
+            print(f"-{nombre}")
+    else:
+        print("No hay juegos en este genero")
 
-    input("\nPresiona Enter para fokin continuar...")  # espera a que el insecto le de al fokin enter
+    input("\nPresiona Enter para fokin continuar...plis:)")  # espera a que el insecto le de al fokin enter
 
 def main():
     while True:
@@ -98,9 +168,9 @@ def main():
             print("Gracias mai, te la lavas")
             break#se break el ciclo y tan tan.
         else:
-            print("Opcion incorrecta, intente con otra")      
+            print("Esa ni existe, calale con otra hermano")      
             time.sleep(2)
-
 
 if __name__ == "__main__":
     main()
+# lo que dice esta funcion es que si el __name__ es igual a __main__ enotnces manda a llamar a main() la cual ya definimos su funcion arriba en la linea 155
