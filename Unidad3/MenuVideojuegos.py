@@ -1,7 +1,8 @@
 # Lista vacía para organizar los videojuegos.
 import os #Esta libreria se importa para poder limpiar la pantalla y asi no se vea un cochinero en la pantalla.
 import time #Se importa esta libreria para poder hacer pausas mientras se esta ejecutando el codigo
-import csv
+from Archivos import guardar_diccionarios_en_csv
+from  Archivos import leer_diccionarios_de_csv
 #Se crean los diccionarios, eso si, vacios ya que la intencion con este programa es preguntar por los videojuegos para despues decidir donde organizarlos.
 Accion = {}
 Aventura = {}
@@ -171,46 +172,19 @@ def main():
             print("Esa ni existe, calale con otra hermano")      
             time.sleep(2)
 
+         
+
 if __name__ == "__main__":
     main()
-    Datos = [
-        {"Nombre": Accion },
+    datos = [
+        { "Accion", "Aventura", "Terror", "Arcade", "Deportes", "Estrategia", "Simulacion", "Shooters" },
         
     ]
-# lo que dice esta funcion eque si el __name__ es igual a __main__ enotnces manda a llamar a main() la cual ya definimos su funcion arriba en la linea 155
-
-def guardar_diccionarios_en_csv(Accion, Datos):
-    """Guarda una lista de diccionarios en un archivo CSV."""
-    if not Datos:
-        print("La lista de diccionarios está vacía.")
-        return
-
-    # Obtener las claves del primer diccionario como encabezados
-    encabezados = Datos[0].keys()
-
-    with open(Accion, mode='w', newline='', encoding='utf-8') as archivo_csv:
-        escritor = csv.DictWriter(archivo_csv, fieldnames=encabezados)
-        escritor.writeheader()
-        escritor.writerows(Datos)
-
-    print(f"Datos guardados en {Accion} exitosamente.")
-
-def leer_diccionarios_de_csv(Accion):
-    """Lee un archivo CSV y lo convierte en una lista de diccionarios."""
-    try:
-        with open(Accion, mode='r', encoding='utf-8') as archivo_csv:
-            lector = csv.DictReader(archivo_csv)
-            return [fila for fila in lector]
-    except FileNotFoundError:
-        print(f"El archivo {Accion} no existe.")
-        return []
 archivo = "datos.csv"
+guardar_diccionarios_en_csv(archivo, datos)
 
-    # Guardar los diccionarios en un archivo CSV
-guardar_diccionarios_en_csv(archivo, Datos)
-
-    # Leer los diccionarios desde el archivo CSV
 datos_leidos = leer_diccionarios_de_csv(archivo)
 print("Datos leídos del archivo CSV:")
 print(datos_leidos)
+# lo que dice esta funcion eque si el __name__ es igual a __main__ enotnces manda a llamar a main() la cual ya definimos su funcion arriba en la linea 155
 
