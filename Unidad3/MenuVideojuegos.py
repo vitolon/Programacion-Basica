@@ -4,7 +4,9 @@ import time #Se importa esta libreria para poder hacer pausas mientras se esta e
 from Archivos import guardar_diccionarios_en_csv
 from  Archivos import leer_diccionarios_de_csv
 #Se crean los diccionarios, eso si, vacios ya que la intencion con este programa es preguntar por los videojuegos para despues decidir donde organizarlos.
-Accion = {}
+Accion = [
+    {"Nombre" : "pou"}
+]
 Aventura = {}
 Terror = {}
 Arcade ={}
@@ -172,19 +174,19 @@ def main():
             print("Esa ni existe, calale con otra hermano")      
             time.sleep(2)
 
-         
-
 if __name__ == "__main__":
-    main()
-    datos = [
-        { "Accion", "Aventura", "Terror", "Arcade", "Deportes", "Estrategia", "Simulacion", "Shooters" },
-        
+    main()  # Aquí el usuario interactúa con el programa
+    
+    # Después de salir, guardamos los datos
+    Datos = [
+    {"Nombre": "Juan", "Edad": 25, "Ciudad": "Madrid"},
+    {"Nombre": "Ana", "Edad": 30, "Ciudad": "Barcelona"},
+    {"Nombre": "Luis", "Edad": 35, "Ciudad": "Valencia"}
     ]
-archivo = "datos.csv"
-guardar_diccionarios_en_csv(archivo, datos)
-
-datos_leidos = leer_diccionarios_de_csv(archivo)
-print("Datos leídos del archivo CSV:")
-print(datos_leidos)
-# lo que dice esta funcion eque si el __name__ es igual a __main__ enotnces manda a llamar a main() la cual ya definimos su funcion arriba en la linea 155
-
+    
+    archivo = "Menu_juegos.py"
+    
+    guardar_diccionarios_en_csv(archivo, Accion)
+    datos_leidos = leer_diccionarios_de_csv(archivo)
+    print("Datos leídos del archivo CSV:")
+    print(datos_leidos)

@@ -1,4 +1,2 @@
-Nombre,Edad,Ciudad
-Juan,25,Madrid
-Ana,30,Barcelona
-Luis,35,Valencia
+Accion
+{'1': 'accion'}
