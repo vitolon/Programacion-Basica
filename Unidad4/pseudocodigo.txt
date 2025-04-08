@@ -1,0 +1,24 @@
+Algoritmo sin_titulo
+	Definir llave_abierta Como logico
+	Definir humedad_actual como Real
+	Definir humedad_minima Como Real
+	Definir tiempo Como Entero
+	
+	humedad_minima <- 30.0
+	tiempo <- 5
+	
+	Escribir "ingrese la humedad_actual"
+	Leer humedad_actual
+	
+Si humedad_actual < humedad_minima Entonces
+	llave_abierta = Verdadero
+	Escribir "Humedad baja (",humedad_actual ,"%) activando llave por (", tiempo ,") segundos"
+	Esperar tiempo Segundos
+SiNo
+	llave_abierta = Falso
+	Escribir "parametros de humedad (" , humedad_actual, "%) normales, llave cerrada"
+		
+FinSi
+	
+		
+FinAlgoritmo
