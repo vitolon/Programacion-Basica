@@ -1,5 +1,5 @@
 import time
-import feed
+from reader import feed
 
 def main():
     """Imprime el último tutorial de Python"""
