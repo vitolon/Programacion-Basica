@@ -3,6 +3,31 @@ import os #Esta libreria se importa para poder limpiar la pantalla y asi no se v
 import time #Se importa esta libreria para poder hacer pausas mientras se esta ejecutando el codigo
 from Archivos import guardar_diccionarios_en_csv
 from  Archivos import leer_diccionarios_de_csv
+from reader import feed
+
+
+class TimerError(Exception):
+    """Custom exception for Timer class"""
+    pass
+
+class Timer:
+    def __init__(self):
+        """inicia el taimer"""
+        self._start_time = None
+    def start(self):
+    
+        if self._start_time is not None:
+            raise TimerError(f"El tiempo está corriendo. Usa .stop() para parar esto")
+        self._start_time = time.perf_counter()
+
+    def stop(self):
+        if self._start_time is None:raise TimerError(f"El tiempo no está corriendo. Usa .start() para comenzarlo")
+        elapsed_time = time.perf_counter() - self._start_time  
+        self._start_time = None
+        print(f"Tiempo: {elapsed_time:0.6f} segundos")
+        return elapsed_time
+
+        
 #Se crean los diccionarios, eso si, vacios ya que la intencion con este programa es preguntar por los videojuegos para despues decidir donde organizarlos.
 Accion = [
     {"Nombre" : "pou"}
@@ -190,3 +215,11 @@ if __name__ == "__main__":
     datos_leidos = leer_diccionarios_de_csv(archivo)
     print("Datos leídos del archivo CSV:")
     print(datos_leidos)
+
+tic = time.perf_counter()
+misifu = feed.get_article(1)# Se mide el tiempo de ejecución de la función get_article
+toc = time.perf_counter()   
+print(f"El feed ha sido descargado en {toc - tic:0.4f} segundos")
+# Se mide el tiempo de ejecución de la función get_article          
+
+print(misifu)
