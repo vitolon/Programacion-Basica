@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import (QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout, QHBoxLayout, QMessageBox, QGridLayout)
 
-app = QApplication(sys.argv)
+
 
 class Calculadora(QWidget):
     def __init__(self):   
@@ -14,7 +14,12 @@ class Calculadora(QWidget):
          self.multimplicar = QPushButton("*")
          self.dividir = QPushButton("/")
          self.resultado = QLabel("Resultado")
-         
+   
+      
+         self.label = QLabel("Ingresa un número:", self)
+         self.text_input = QLineEdit(self)
+         self.button = QPushButton("Convertir a float", self)
+         self.result_label = QLabel("", self)        
          grid = QGridLayout(self)
          grid.addWidget(self.A,0,1,1,3)
          grid.addWidget(self.B,1,1,1,3)
@@ -26,7 +31,11 @@ class Calculadora(QWidget):
          grid.addWidget(QLabel("A"),0,0)
          grid.addWidget(QLabel("B"),1,0)
          grid.addWidget(QLabel("RPTA"),3,0)
-         
+         self.show()
+
+
+
+
          self.sumar.clicked.connect(self.suma)
          self.restar.clicked.connect(self.resta)
          self.multimplicar.clicked.connect(self.multiplicacion)
@@ -34,25 +43,26 @@ class Calculadora(QWidget):
          self.show()
 
     
-def suma(self):
-    
-        r = float(self.A.text()) + float(self.B.text())
-        self.resultado.setText(str(r))
-def resta (self):
-      r = float(self.A.Text()) - float(self.B.text())
-      self.resultado.setText(str(r))
-def multiplicacion (self):
-      r=float(self.A.text()) * float(self.B.text())
-      self.resultado.setText(str(r))
-def division (self):
-    r = float (self.A.text()) / float (self.B.text())
-    self.resultado.setText(str(r))
+    def suma(self):
+           r = float(self.A.text()) + float(self.B.text())
+           self.resultado.setText(str(r))
+    def resta(self):
+          r = float(self.A.Text()) - float(self.B.text())
+          self.resultado.setText(str(r))
+    def multiplicacion(self):
+          r=float(self.A.text()) * float(self.B.text())
+          self.resultado.setText(str(r))
+    def division(self):
+          r = float (self.A.text()) / float (self.B.text())
+          self.resultado.setText(str(r))
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ventana = Calculadora()
+    ventana.show()
+    sys.exit(app.exec_())
 
       
-
-calc = Calculadora()
-
-sys.exit(app.exec_())
 
 
 
